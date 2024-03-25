@@ -1,20 +1,23 @@
+// Load environment configuration
 require('dotenv').config()
-const { Pool } = require('pg')
+const { Pool } = require('pg') // PostgreSQL connection pool
 
-const query = (sql,values = []) => {
-    return new Promise(async(resolve,reject) => {
-        try{
-            const pool = openDb()
-            const result = await pool.query(sql,values)
-            resolve(result)
+// Execute a SQL query
+const query = (sql, values = []) => {
+    return new Promise(async(resolve, reject) => {
+        try {
+            const pool = openDb() // Get a pool connection
+            const result = await pool.query(sql, values) // Execute query
+            resolve(result) // Return results
         } catch (error) {
-            reject(error.message)
+            reject(error.message) // Handle errors
         }
     })
 }
 
+// Create and return a database connection pool
 const openDb = () => {
-    const pool = new Pool ({
+    return new Pool({
         user: process.env.DB_USER,
         host: process.env.DB_HOST,
         database: process.env.DB_NAME,
@@ -22,9 +25,6 @@ const openDb = () => {
         port: process.env.DB_PORT,
         ssl: process.env.SSL
     })
-    return pool
 }
 
-module.exports = {
-    query
-}
+module.exports = { query } // Make the query function available to other files
