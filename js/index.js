@@ -1,6 +1,5 @@
 const BACKEND_ROOT_URL = 'https://todo-app-server-5ape.onrender.com'
 import { Todos } from "./Class/Todos.js"
-import './css/style.css';
 
 const todos = new Todos(BACKEND_ROOT_URL)
 
