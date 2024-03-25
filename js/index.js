@@ -1,5 +1,5 @@
 // Define the root URL for the backend API
-const BACKEND_ROOT_URL = 'https://todo-app-server-5ape.onrender.com'
+const BACKEND_ROOT_URL = 'https://todo-backend.anilshah.pro'
 
 // Import the Todos class from the Todos module
 import { Todos } from "./Class/Todos.js"
