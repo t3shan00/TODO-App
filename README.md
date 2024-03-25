@@ -63,8 +63,8 @@ Deployment of TODO APP
 - Deploying front-end using HTML, CSS and Javascript
 - Using Custom domain for backend & frontend
 
-[Frontend URL](https://todo.anilshah.pro/)
-[Backend URL](https://todo-backend.anilshah.pro/)
+- [Frontend URL](https://todo.anilshah.pro/)
+- [Backend URL](https://todo-backend.anilshah.pro/)
 
 PS...
 Instead of separating the frontend and backend code into separate repositories for deployment, I have assigned the server directory for the backend web service.
