@@ -21,7 +21,8 @@ todoRouter.get("/", async (req, res) => {
 todoRouter.post("/new", async (req, res) => {
     try {
         // Insert task into database
-        const result = await query('insert into task (description) values ($1) returning *', [req.body.description])
+        const result = await query('insert into task (description) values ($1) returning *', 
+        [req.body.description])
         res.status(200).json({id:result.rows[0].id}) // Send back the new task ID
     } catch (error) {
         // Handle errors
@@ -35,7 +36,8 @@ todoRouter.post("/new", async (req, res) => {
 todoRouter.delete("/delete/:id", async (req, res) => {
     try {
         // Delete task from database
-        const result = await query('delete from task where id = $1', [Number(req.params.id)])
+        const result = await query('delete from task where id = $1', 
+        [Number(req.params.id)])
         res.status(200).json({id: req.params.id}) // Confirm deletion with task ID
     } catch (error) {
         // Handle errors
