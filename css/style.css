@@ -14,3 +14,15 @@ form {
 .bi-trash{
     cursor: pointer;
 }
+
+.bi-trash:hover{
+    color: red;
+}
+
+li:hover{
+    background: linear-gradient(to right, #fff 50%, #cefad0 50%) right;
+    background-size: 200% 100%;
+    transition: 0.3s;
+}
+
+
